@@ -3,6 +3,7 @@ const express = require('express'),
 	app = express(),
 	routes = require('./routes/index'),
 	Visitor = require('./models/visitor'),
+	Host = require('./models/host'),
 	cors = require('cors'),
 	bodyParser = require('body-parser');
 
@@ -25,8 +26,18 @@ app.get('/', (req, res) => {
 	res.send('Server is running');
 });
 
+app.get('/get_visitors', (req, res) => {
+	Visitor.find({}, (err, visitors) => {
+		if (err) {
+			console.log(err);
+		} else {
+			res.send(visitors);
+		}
+	});
+});
+
 app.post('/visitor/checkin', (req, res) => {
-	console.log('Post Route');
+	console.log('Visitor Post Route');
 	res.send(req.body);
 	const data = JSON.parse(Object.keys(req.body)[0]);
 	Visitor.create(
@@ -41,6 +52,27 @@ app.post('/visitor/checkin', (req, res) => {
 				console.log(err);
 			} else {
 				console.log(visitor);
+			}
+		}
+	);
+});
+
+app.post('/host/add', (req, res) => {
+	console.log('Host Post Route');
+	res.send(req.body);
+	const data = JSON.parse(Object.keys(req.body)[0]);
+	Host.create(
+		{
+			name: data.name,
+			phone: data.phone,
+			email: data.email,
+			address: data.address
+		},
+		(err, host) => {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log(host);
 			}
 		}
 	);

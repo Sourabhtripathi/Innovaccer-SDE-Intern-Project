@@ -26,6 +26,7 @@ class AddHost extends Component {
 	render() {
 		return (
 			<div>
+				<h3>Add Host</h3>
 				<Link to="/">Back</Link>
 				<form onSubmit={this.handleFormSubmit}>
 					<label>

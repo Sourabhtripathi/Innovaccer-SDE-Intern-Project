@@ -26,6 +26,7 @@ class AddVisitor extends Component {
 	render() {
 		return (
 			<div>
+				<h3>Add Visitor</h3>
 				<Link to="/">Back</Link>
 				<form onSubmit={this.handleFormSubmit}>
 					<label>
