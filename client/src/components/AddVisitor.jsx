@@ -19,8 +19,11 @@ class AddVisitor extends Component {
 			object[key] = value;
 		});
 
-		object = { ...object, checkin: Date.now() };
-		const response = await innovaccer.post('/visitor/checkin', JSON.stringify(object));
+		const { hostName, hostAddress } = this.props.location.state;
+
+		object = { ...object, checkin: Date.now(), hostName: hostName, hostAddress: hostAddress };
+		await innovaccer.post('/visitor/checkin', JSON.stringify(object));
+		this.props.history.push('/');
 	};
 
 	render() {

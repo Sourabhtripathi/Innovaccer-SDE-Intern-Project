@@ -20,7 +20,8 @@ class AddHost extends Component {
 			object[key] = value;
 		});
 
-		const response = await innovaccer.post('/host/add', JSON.stringify(object));
+		await innovaccer.post('/host/add', JSON.stringify(object));
+		this.props.history.push('/');
 	};
 
 	render() {

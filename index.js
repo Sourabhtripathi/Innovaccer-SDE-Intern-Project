@@ -7,6 +7,8 @@ const express = require('express'),
 	cors = require('cors'),
 	bodyParser = require('body-parser');
 
+const mailjet = require('node-mailjet').connect('aab1a722b8bdb2869e26d6d7dd7d1018', 'dc02c5006fb42809e1fe4fd4a63722b9');
+
 // MongoDB Configure
 const url = process.env.DATABASEURL || 'mongodb://localhost/innovaccer';
 mongoose.connect(url, { useNewUrlParser: true });
@@ -40,13 +42,16 @@ app.post('/visitor/checkin', (req, res) => {
 	console.log('Visitor Post Route');
 	res.send(req.body);
 	const data = JSON.parse(Object.keys(req.body)[0]);
+	const { name, phone, email, checkin, hostName, hostAddress } = data;
 	Visitor.create(
 		{
-			name: data.name,
-			phone: data.phone,
-			email: data.email,
-			checkin: data.checkin,
-			checkout: ''
+			name,
+			phone,
+			email,
+			checkin,
+			checkout: '',
+			hostName,
+			hostAddress
 		},
 		(err, visitor) => {
 			if (err) {
@@ -56,6 +61,34 @@ app.post('/visitor/checkin', (req, res) => {
 			}
 		}
 	);
+	// const request = mailjet.post('send', { version: 'v3.1' }).request({
+	// 	Messages: [
+	// 		{
+	// 			From: {
+	// 				Email: 'sourabhtripathi48@gmail.com',
+	// 				Name: 'Sourabh'
+	// 			},
+	// 			To: [
+	// 				{
+	// 					Email: 'wastea33@gmail.com',
+	// 					Name: 'Akshat'
+	// 				}
+	// 			],
+	// 			Subject: 'Greetings from Sourabh.',
+	// 			TextPart: 'My first Mailjet email',
+	// 			HTMLPart:
+	// 				"<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
+	// 			CustomID: 'AppGettingStartedTest'
+	// 		}
+	// 	]
+	// });
+	// request
+	// 	.then((result) => {
+	// 		console.log(result.body);
+	// 	})
+	// 	.catch((err) => {
+	// 		console.log(err.statusCode);
+	// 	});
 });
 
 app.put('/visitor/checkout/:visitorId', (req, res) => {

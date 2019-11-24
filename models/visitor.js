@@ -7,7 +7,7 @@ visitorsSchema = new mongoose.Schema({
 	checkin: Date,
 	checkout: Date,
 	hostName: String,
-	addressVisited: String
+	hostAddress: String
 });
 
 module.exports = mongoose.model('Visitor', visitorsSchema);
