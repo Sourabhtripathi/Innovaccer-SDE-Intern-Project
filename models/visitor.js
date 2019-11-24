@@ -1,13 +1,15 @@
 const mongoose = require('mongoose');
 
 visitorsSchema = new mongoose.Schema({
-	name: String,
-	phone: Number,
-	email: String,
+	visitorName: String,
+	visitorPhone: Number,
+	visitorEmail: String,
 	checkin: Date,
 	checkout: Date,
 	hostName: String,
-	hostAddress: String
+	hostPhone: Number,
+	hostEmail: String,
+	addressVisited: String
 });
 
 module.exports = mongoose.model('Visitor', visitorsSchema);

@@ -3,7 +3,6 @@ const express = require('express'),
 	app = express(),
 	routes = require('./routes/index'),
 	Visitor = require('./models/visitor'),
-	Host = require('./models/host'),
 	cors = require('cors'),
 	bodyParser = require('body-parser');
 
@@ -42,16 +41,18 @@ app.post('/visitor/checkin', (req, res) => {
 	console.log('Visitor Post Route');
 	res.send(req.body);
 	const data = JSON.parse(Object.keys(req.body)[0]);
-	const { name, phone, email, checkin, hostName, hostAddress } = data;
+	const { visitorName, visitorPhone, visitorEmail, checkin, hostName, hostPhone, hostEmail, addressVisited } = data;
 	Visitor.create(
 		{
-			name,
-			phone,
-			email,
+			visitorName,
+			visitorPhone,
+			visitorEmail,
 			checkin,
 			checkout: '',
 			hostName,
-			hostAddress
+			hostPhone,
+			hostEmail,
+			addressVisited
 		},
 		(err, visitor) => {
 			if (err) {
@@ -61,88 +62,88 @@ app.post('/visitor/checkin', (req, res) => {
 			}
 		}
 	);
-	// const request = mailjet.post('send', { version: 'v3.1' }).request({
-	// 	Messages: [
-	// 		{
-	// 			From: {
-	// 				Email: 'sourabhtripathi48@gmail.com',
-	// 				Name: 'Sourabh'
-	// 			},
-	// 			To: [
-	// 				{
-	// 					Email: 'wastea33@gmail.com',
-	// 					Name: 'Akshat'
-	// 				}
-	// 			],
-	// 			Subject: 'Greetings from Sourabh.',
-	// 			TextPart: 'My first Mailjet email',
-	// 			HTMLPart:
-	// 				"<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
-	// 			CustomID: 'AppGettingStartedTest'
-	// 		}
-	// 	]
-	// });
-	// request
-	// 	.then((result) => {
-	// 		console.log(result.body);
-	// 	})
-	// 	.catch((err) => {
-	// 		console.log(err.statusCode);
-	// 	});
-});
-
-app.put('/visitor/checkout/:visitorId', (req, res) => {
-	const data = JSON.parse(Object.keys(req.body)[0]);
-	console.log(data);
-	res.send(data);
-	Visitor.findByIdAndUpdate(
-		req.params.visitorId,
-		{
-			name: data.name,
-			phone: data.phone,
-			email: data.email,
-			checkin: data.checkin,
-			checkout: data.checkout
-		},
-		function(err, updatedVisitor) {
-			if (err) {
-				console.log(err);
-			} else {
-				console.log(updatedVisitor);
+	let request = mailjet.post('send', { version: 'v3.1' }).request({
+		Messages: [
+			{
+				From: {
+					Email: 'sourabhtripathi48@gmail.com',
+					Name: 'Sourabh'
+				},
+				To: [
+					{
+						Email: hostEmail,
+						Name: hostName
+					}
+				],
+				Subject: 'Greetings from Sourabh.',
+				TextPart: `You have a visitor\nVisitor Details :\nName : ${visitorName}\nPhone : ${visitorPhone}\nEmail : ${visitorEmail}`
+				// HTMLPart:
+				// 	"<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
+				// CustomID: 'AppGettingStartedTest'
 			}
-		}
-	);
+		]
+	});
+	request
+		.then((result) => {
+			console.log(result.body);
+		})
+		.catch((err) => {
+			console.log(err.statusCode);
+		});
 });
 
-app.get('/get_hosts', (req, res) => {
-	Host.find({}, (err, hosts) => {
+app.put('/visitor/checkout', (req, res) => {
+	const data = JSON.parse(Object.keys(req.body)[0]);
+	Visitor.find({ visitorEmail: data }, function(err, foundVisitor) {
 		if (err) {
-			console.log(err);
+			res.send('Error');
 		} else {
-			res.send(hosts);
+			if (foundVisitor.length > 0) {
+				if (foundVisitor[0].checkout === '') {
+					foundVisitor[0].checkout = Date.now();
+					foundVisitor[0].save();
+					let request = mailjet.post('send', { version: 'v3.1' }).request({
+						Messages: [
+							{
+								From: {
+									Email: 'sourabhtripathi48@gmail.com',
+									Name: 'Sourabh'
+								},
+								To: [
+									{
+										Email: foundVisitor[0].visitorEmail,
+										Name: foundVisitor[0].visitorName
+									}
+								],
+								Subject: 'Greetings from Sourabh.',
+								TextPart: `Here are the visit details :\nName : ${foundVisitor[0]
+									.visitorName}\nPhone : ${foundVisitor[0]
+									.visitorPhone}\nCheck-in Time : ${foundVisitor[0]
+									.checkin}\nCheck-in Time : ${foundVisitor[0]
+									.checkout}\nHost name : ${foundVisitor[0]
+									.hostName}\nAddress Visited : ${foundVisitor[0].addressVisited}`
+								// HTMLPart:
+								// 	"<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
+								// CustomID: 'AppGettingStartedTest'
+							}
+						]
+					});
+					request
+						.then((result) => {
+							console.log(result.body);
+						})
+						.catch((err) => {
+							console.log(err.statusCode);
+						});
+					res.send('Visitor Found');
+				} else {
+					res.send('Visitor already checked out');
+				}
+			} else {
+				res.send('Visitor Not Found');
+			}
 		}
 	});
-});
-
-app.post('/host/add', (req, res) => {
-	console.log('Host Post Route');
-	res.send(req.body);
-	const data = JSON.parse(Object.keys(req.body)[0]);
-	Host.create(
-		{
-			name: data.name,
-			phone: data.phone,
-			email: data.email,
-			address: data.address
-		},
-		(err, host) => {
-			if (err) {
-				console.log(err);
-			} else {
-				console.log(host);
-			}
-		}
-	);
 });
 
 app.listen(3001, () => {
