@@ -1,34 +1,46 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../stylesheets/Home.css';
+import List from './List';
 import innovaccer from '../apis/innovaccer';
 
 class Home extends Component {
 	state = {
-		data: []
+		visitors: [],
+		hosts: []
 	};
+
 	async componentDidMount() {
-		let response = await innovaccer.get('/get_visitors');
+		let visitorsResponse = await innovaccer.get('/get_visitors');
 		this.setState({
-			data: response.data
+			visitors: visitorsResponse.data
 		});
-		console.log(this.data);
+
+		let hostsResponse = await innovaccer.get('/get_hosts');
+		this.setState({
+			hosts: hostsResponse.data
+		});
 	}
 
+	handler = () => {
+		this.componentDidMount();
+	};
+
 	render() {
-		if (!this.state.data) {
+		if (!this.state.visitors || !this.state.hosts) {
 			return <div>Loading...</div>;
 		} else {
 			return (
 				<div>
 					<h3>Home</h3>
-					<h3>Visitors :</h3>
-					<ul>
-						{this.state.data.map((visitor) => {
-							return <li>{visitor.name}</li>;
-						})}
-					</ul>
-					<Link to="/add_visitor">Add Visitor</Link>
+					<div>
+						<h3>Visitors :</h3>
+						<List entries={this.state.visitors} buttonType="Checkout" handler={this.handler} />
+					</div>
+					<div>
+						<h3>Hosts :</h3>
+						<List entries={this.state.hosts} buttonType="Visit Host" linkDest="/add_visitor" />
+					</div>
 					<Link to="/add_host">Add Host</Link>
 				</div>
 			);

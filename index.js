@@ -45,7 +45,8 @@ app.post('/visitor/checkin', (req, res) => {
 			name: data.name,
 			phone: data.phone,
 			email: data.email,
-			checkin: data.checkin
+			checkin: data.checkin,
+			checkout: ''
 		},
 		(err, visitor) => {
 			if (err) {
@@ -55,6 +56,39 @@ app.post('/visitor/checkin', (req, res) => {
 			}
 		}
 	);
+});
+
+app.put('/visitor/checkout/:visitorId', (req, res) => {
+	const data = JSON.parse(Object.keys(req.body)[0]);
+	console.log(data);
+	res.send(data);
+	Visitor.findByIdAndUpdate(
+		req.params.visitorId,
+		{
+			name: data.name,
+			phone: data.phone,
+			email: data.email,
+			checkin: data.checkin,
+			checkout: data.checkout
+		},
+		function(err, updatedVisitor) {
+			if (err) {
+				console.log(err);
+			} else {
+				console.log(updatedVisitor);
+			}
+		}
+	);
+});
+
+app.get('/get_hosts', (req, res) => {
+	Host.find({}, (err, hosts) => {
+		if (err) {
+			console.log(err);
+		} else {
+			res.send(hosts);
+		}
+	});
 });
 
 app.post('/host/add', (req, res) => {
