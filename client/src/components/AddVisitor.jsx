@@ -12,8 +12,18 @@ class AddVisitor extends Component {
 		hostName: '',
 		hostPhone: null,
 		hostEmail: '',
-		addressVisited: ''
+		addressVisited: '',
+		visitors: []
 	};
+
+	async componentDidMount() {
+		const response = await innovaccer.get('/get_visitors');
+		this.setState({
+			visitors: response.data
+		});
+
+		console.log(this.state);
+	}
 
 	resetState = () => {
 		this.setState({
@@ -30,6 +40,7 @@ class AddVisitor extends Component {
 
 	handleFormSubmit = async (event) => {
 		event.preventDefault();
+
 		const data = new FormData(event.target);
 		var object = {};
 
@@ -37,9 +48,17 @@ class AddVisitor extends Component {
 			object[key] = value;
 		});
 
-		object = { ...object, checkin: Date.now(), addressVisited: 'Innovaccer Headquarters' };
-		await innovaccer.post('/visitor/checkin', JSON.stringify(object));
-		this.resetState();
+		const result = this.state.visitors.find((obj) => {
+			return obj.visitorEmail === object.visitorEmail;
+		});
+
+		if (result != undefined) {
+			console.log('email already exists');
+		} else {
+			object = { ...object, checkin: Date.now(), addressVisited: 'Innovaccer Headquarters' };
+			await innovaccer.post('/visitor/checkin', JSON.stringify(object));
+			this.resetState();
+		}
 	};
 
 	handleOnChange = (event) => {
