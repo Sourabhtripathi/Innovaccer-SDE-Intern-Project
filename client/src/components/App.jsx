@@ -5,19 +5,20 @@ import AddVisitor from './AddVisitor';
 import Checkout from './Checkout';
 import Header from '../Layouts/Header';
 import Footer from '../Layouts/Footer';
+import '../stylesheets/App.css';
 
 class App extends Component {
 	render() {
 		return (
 			<Router history={history}>
-				<div>
-					<Header />
+				<div style={{ background: '#212121', height: '100vh' }}>
+					{/* <Header /> */}
 					<Switch>
 						<Route path="/add_visitor" exact component={AddVisitor} />
 						<Route path="/visitor_checkout" exact component={Checkout} />
 						<Route path="/" exact render={() => <Redirect to="/add_visitor" />} />
 					</Switch>
-					<Footer />
+					{/* <Footer /> */}
 				</div>
 			</Router>
 		);

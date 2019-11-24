@@ -99,7 +99,7 @@ app.put('/visitor/checkout', (req, res) => {
 			res.send('Error');
 		} else {
 			if (foundVisitor.length > 0) {
-				if (foundVisitor[0].checkout === '') {
+				if (foundVisitor[0].checkout === null) {
 					foundVisitor[0].checkout = Date.now();
 					foundVisitor[0].save();
 					let request = mailjet.post('send', { version: 'v3.1' }).request({
