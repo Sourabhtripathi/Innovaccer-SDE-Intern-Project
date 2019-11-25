@@ -1,3 +1,4 @@
+
 # Entry Management Software - Innovaccer SDE Intern 2020
 
 This is an Entry Management Software for Innovaccer. 
@@ -7,7 +8,15 @@ Hosted React app : [https://innovaccer-sde-intern-client.herokuapp.com/](https:/
 
 Hosted Server : [https://innovaccer-sde-intern-server.herokuapp.com/](https://innovaccer-sde-intern-server.herokuapp.com/)
 
-#	
+## Directory Structure
+
+![enter image description here](https://lh3.googleusercontent.com/qRXwFMv1aMRz_6pQwGEuz1pMFgSvUs9N8q5xmc6YczASmlOs6xm1SlkkCgoXA2x32ni0INIXD64)
+
+
+![enter image description here](https://lh3.googleusercontent.com/cdfh2HyfwJDYPh_j0E8QZzZDUJH-cuM_NjSrVM6d4ikGidkA-k7sp7Raj8NXKbxDgoVhMV6jRm8)
+
+
+![enter image description here](https://lh3.googleusercontent.com/rAfXkVfuyhJoX6GnpMf4ew6ui6uLoUAUsbXyGbzHwrz48GPL_QpV2AvfVJZbrVDeQV4nTn3pEnU)
 
 ## Tech Stack used : 
 
