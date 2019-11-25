@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import { Transition } from 'semantic-ui-react';
 
 import '../stylesheets/Footer.css';
@@ -14,10 +14,10 @@ class Footer extends Component {
 
 	render() {
 		return (
-			<Fragment style={{ position: 'fixed', top: '85vh', right: '5%' }}>
-				<div class="fabContainer">
+			<div style={{ position: 'fixed', top: '85vh', right: '5%' }}>
+				<div className="fabContainer">
 					<Transition visible={this.state.showLabel} animation="scale" duration={500}>
-						<div class="fabDropdown" style={{ display: `${this.state.showLabel ? 'block' : 'none'}` }}>
+						<div className="fabDropdown" style={{ display: `${this.state.showLabel ? 'block' : 'none'}` }}>
 							<ul style={{ listStyle: 'none' }}>
 								<li
 									style={{ padding: '5px 10px' }}
@@ -25,9 +25,11 @@ class Footer extends Component {
 										this.handleOnClick('/');
 									}}
 								>
-									<span style={{ padding: '5px 10px', cursor: 'pointer' }}>Home</span>
-									<div class="item circular ui icon orange button">
-										<i class="icon home" />
+									<span style={{ padding: '5px 10px', cursor: 'pointer', fontWeight: 800 }}>
+										Home
+									</span>
+									<div className="item circular ui icon orange button">
+										<i className="icon home" />
 									</div>
 								</li>
 								<li
@@ -36,9 +38,11 @@ class Footer extends Component {
 										this.handleOnClick('/add_visitor');
 									}}
 								>
-									<span style={{ padding: '5px 10px', cursor: 'pointer' }}>Check-In</span>
-									<div class="circular ui icon orange button">
-										<i class="retweet icon" />
+									<span style={{ padding: '5px 10px', cursor: 'pointer', fontWeight: 800 }}>
+										Check-In
+									</span>
+									<div className="circular ui icon orange button">
+										<i className="retweet icon" />
 									</div>
 								</li>
 								<li
@@ -47,29 +51,31 @@ class Footer extends Component {
 										this.handleOnClick('/visitor_checkout');
 									}}
 								>
-									<span style={{ padding: '5px 10px', cursor: 'pointer' }}>Checkout</span>
-									<div class="circular ui icon orange button">
-										<i class="checkered flag icon" />
+									<span style={{ padding: '5px 10px', cursor: 'pointer', fontWeight: 800 }}>
+										Checkout
+									</span>
+									<div className="circular ui icon orange button">
+										<i className="checkered flag icon" />
 									</div>
 								</li>
 							</ul>
 						</div>
 					</Transition>
 
-					<div class="faButton" id="fab">
+					<div className="faButton" id="fab">
 						<div
-							class="ui circular large blue icon button "
+							className="ui circular large blue icon button "
 							onClick={() => {
 								this.setState({
 									showLabel: !this.state.showLabel
 								});
 							}}
 						>
-							<i class="icon chevron up" />
+							<i className="icon chevron up" />
 						</div>
 					</div>
 				</div>
-			</Fragment>
+			</div>
 		);
 	}
 }

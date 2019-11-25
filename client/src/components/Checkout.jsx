@@ -68,11 +68,11 @@ class Checkout extends Component {
 					Checkout
 				</h3>
 				<div className="ui card " id="checkout">
-					<form class="ui form" onSubmit={this.onFormSubmit}>
-						<h4 class="ui dividing header" style={{ margin: '20px auto', textAlign: 'center' }}>
+					<form className="ui form" onSubmit={this.onFormSubmit}>
+						<h4 className="ui dividing header" style={{ margin: '20px auto', textAlign: 'center' }}>
 							Confirm Your Email
 						</h4>
-						<div class="field" style={{ width: '95%', margin: '0 auto' }}>
+						<div className="field" style={{ width: '95%', margin: '0 auto' }}>
 							<div className="field">
 								<input
 									type="email"
@@ -87,7 +87,11 @@ class Checkout extends Component {
 								) : null}
 							</div>
 						</div>
-						<button class="ui button red" style={{ margin: '20px auto', marginBottom: 0 }} type="submit">
+						<button
+							className="ui button red"
+							style={{ margin: '20px auto', marginBottom: 0 }}
+							type="submit"
+						>
 							Submit
 						</button>
 					</form>

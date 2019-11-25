@@ -6,7 +6,7 @@ const express = require('express'),
 	bodyParser = require('body-parser');
 
 // MongoDB Configure
-const url = 'mongodb://localhost/innovaccer';
+const url = process.env.DATABASEURL || 'mongodb://localhost/innovaccer';
 const port = process.env.PORT || 3001;
 mongoose.connect(url, {
 	useNewUrlParser: true

@@ -1,17 +1,9 @@
 const express = require('express'),
 	app = express(),
 	Visitor = require('../models/visitor'),
-	mailjet = require('node-mailjet').connect('aab1a722b8bdb2869e26d6d7dd7d1018', 'dc02c5006fb42809e1fe4fd4a63722b9'),
-	Nexmo = require('nexmo');
+	mailjet = require('node-mailjet').connect(process.env.mailJetId, process.env.mailJetToken);
 
-const nexmo = new Nexmo({
-	apiKey: '8972591d',
-	apiSecret: '5oEOy2ZfvougHUGZ'
-});
-
-const accountSid = 'ACbde46de7dea2644af25a6d968bb7ea80';
-const authToken = 'c249f07ec44324d6dc233cff576bbb00';
-const client = require('twilio')(accountSid, authToken);
+const client = require('twilio')(process.env.twilioSid, process.env.twilioAuthToken);
 
 app.get('/', (req, res) => {
 	res.send('Server is running');
@@ -66,9 +58,6 @@ app.post('/visitor/checkin', (req, res) => {
 				],
 				Subject: 'Greetings from Sourabh.',
 				TextPart: `You have a visitor\nVisitor Details :\nName : ${visitorName}\nPhone : ${visitorPhone}\nEmail : ${visitorEmail}`
-				// HTMLPart:
-				// 	"<h3>Dear passenger 1, welcome to <a href='https://www.mailjet.com/'>Mailjet</a>!</h3><br />May the delivery force be with you!",
-				// CustomID: 'AppGettingStartedTest'
 			}
 		]
 	});
@@ -95,22 +84,6 @@ app.post('/visitor/checkin', (req, res) => {
 			}
 		)
 		.then((message) => console.log(message.sid));
-
-	// const from = 'Nexmo';
-	// const to = parseInt(`91${hostPhone}`);
-	// console.log(to);
-	// const text = `You have a visitor\nHere are the Details :\nName : ${visitorName}\nPhone : ${visitorPhone}\nEmail : ${visitorEmail}\nTime : ${checkin}`;
-	// nexmo.message.sendSms(from, to, text, (err, responseData) => {
-	// 	if (err) {
-	// 		console.log(err);
-	// 	} else {
-	// 		if (responseData.messages[0]['status'] === '0') {
-	// 			console.log('Message sent successfully.');
-	// 		} else {
-	// 			console.log(`Message failed with error: ${responseData.messages[0]['error-text']}`);
-	// 		}
-	// 	}
-	// });
 });
 
 app.put('/visitor/checkout', (req, res) => {
