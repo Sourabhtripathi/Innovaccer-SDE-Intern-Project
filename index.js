@@ -6,6 +6,10 @@ const express = require('express'),
 	cors = require('cors'),
 	bodyParser = require('body-parser');
 
+const accountSid = 'ACbde46de7dea2644af25a6d968bb7ea80';
+const authToken = 'c249f07ec44324d6dc233cff576bbb00';
+const client = require('twilio')(accountSid, authToken);
+
 const mailjet = require('node-mailjet').connect('aab1a722b8bdb2869e26d6d7dd7d1018', 'dc02c5006fb42809e1fe4fd4a63722b9');
 
 // MongoDB Configure
@@ -25,6 +29,13 @@ app.use(
 
 app.get('/', (req, res) => {
 	res.send('Server is running');
+	client.messages
+		.create({
+			body: 'This is the ship that made the Kessel Run in fourteen parsecs?',
+			from: '+12563339715',
+			to: '+919630221731'
+		})
+		.then((message) => console.log(message.sid));
 });
 
 app.get('/get_visitors', (req, res) => {

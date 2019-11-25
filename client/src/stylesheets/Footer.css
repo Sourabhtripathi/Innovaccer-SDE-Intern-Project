@@ -1,0 +1,35 @@
+@media only screen and (max-width: 700px) {
+}
+.fabContainer {
+	position: fixed;
+	right: 50px;
+	bottom: 50px;
+	background: none;
+	border: none;
+	text-align: right;
+	z-index: 10;
+}
+.fabb.button {
+	font-size: 1.5rem !important;
+}
+.fabDropdown ul {
+	list-style: none;
+}
+
+.fabDropdown ul li {
+	margin-right: 7px;
+	margin-bottom: 10px;
+}
+.dim {
+	/* dim div */
+	background: white;
+	min-height: 100%;
+	min-width: 1024px;
+	width: 100%;
+	height: auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	transition: .1s;
+	opacity: 0.9;
+}
