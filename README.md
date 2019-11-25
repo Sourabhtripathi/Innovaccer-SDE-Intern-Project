@@ -85,6 +85,7 @@ As you enter the app you see a Landing Page greeting you on behalf of Innovaccer
 
 As You Enter, you would see a Visitor Form which asks for Visitor Details(Name, Phone, Email) and same info is recorded for Host as well.
 ![
+align="right"
 ](https://lh3.googleusercontent.com/m9FSseAXSCGKfKVqq9C3TLEovXffH7q8l6Je8KTCZ7zwyFRxoEfomizy2CzKWuhLR0q3VnX8pGk "Visitor Form")
 
 As the visitor checks in, he/she now cannot checkin again with the same email until he/she checks out.
