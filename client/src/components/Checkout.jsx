@@ -23,7 +23,7 @@ class Checkout extends Component {
 
 	onModalClose = () => {
 		this.resetState();
-		this.props.history.push('/');
+		this.props.history.push('/add_visitor');
 	};
 
 	onFormSubmit = async (event) => {

@@ -11,8 +11,7 @@
 		"dev": "concurrently \"npm run server\" \"npm run client\""
 	},
 	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Sourabhtripathi/Innovaccer-SDE-Intern-Project.git"
+		"type": "git"
 	},
 	"author": "Sourabh Tripathi",
 	"license": "ISC",
@@ -22,14 +21,10 @@
 	"homepage": "https://github.com/Sourabhtripathi/Innovaccer-SDE-Intern-Project#readme",
 	"dependencies": {
 		"body-parser": "^1.19.0",
-		"concurrently": "^5.0.0",
 		"cors": "^2.8.5",
 		"express": "^4.17.1",
 		"mongoose": "^5.7.12",
 		"nexmo": "^2.5.1",
-		"node-mailjet": "^3.3.1",
-		"plivo": "^4.1.6",
-		"semantic-ui-react": "^0.88.1",
-		"twilio": "^3.37.1"
+		"node-mailjet": "^3.3.1"
 	}
 }
