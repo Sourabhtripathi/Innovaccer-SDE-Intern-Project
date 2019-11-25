@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react';
 import '../stylesheets/AddVisitor.css';
-import { Link } from 'react-router-dom';
 import innovaccer from '../apis/innovaccer';
 import Modal from './Modal';
 import Footer from '../Layouts/Footer';
@@ -69,7 +68,6 @@ class AddVisitor extends Component {
 			this.setState({
 				modalOpen: true
 			});
-			// this.resetState();
 		}
 	};
 

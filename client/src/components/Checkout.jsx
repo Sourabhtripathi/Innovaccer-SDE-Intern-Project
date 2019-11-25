@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import '../stylesheets/Checkout.css';
-import { Link } from 'react-router-dom';
 import innovaccer from '../apis/innovaccer';
 import Modal from './Modal';
 import Footer from '../Layouts/Footer';
@@ -108,7 +107,6 @@ class Checkout extends Component {
 					/>
 				</div>
 				<Footer history={this.props.history} />
-				{/* <Link to="/add_visitor">Add Visitor</Link> */}
 			</div>
 		);
 	}

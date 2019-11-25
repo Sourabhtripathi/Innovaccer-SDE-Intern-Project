@@ -63,17 +63,6 @@ class Footer extends Component {
 					</Transition>
 
 					<div class="faButton" id="fab">
-						{/* <button
-							onClick={() => {
-								this.setState({
-									showLabel: !this.state.showLabel
-								});
-							}}
-							class="ui circular chevron up icon large blue dropdown button"
-							style={{ position: 'fixed', top: '85vh', right: '5%' }}
-						>
-							<i class="icon chevron up" />
-						</button> */}
 						<div
 							class="ui circular large blue icon button "
 							onClick={() => {
