@@ -85,7 +85,6 @@ As you enter the app you see a Landing Page greeting you on behalf of Innovaccer
 
 As You Enter, you would see a Visitor Form which asks for Visitor Details(Name, Phone, Email) and same info is recorded for Host as well.
 ![
-align="right"
 ](https://lh3.googleusercontent.com/m9FSseAXSCGKfKVqq9C3TLEovXffH7q8l6Je8KTCZ7zwyFRxoEfomizy2CzKWuhLR0q3VnX8pGk "Visitor Form")
 
 As the visitor checks in, he/she now cannot checkin again with the same email until he/she checks out.
@@ -95,7 +94,8 @@ Once the visitor checks in, the host would receive an email and as sms informing
 ](https://lh3.googleusercontent.com/z0plK7oOMx5wqyYkiMZDYyd8KVgo71xI0kGsCW-A-YA4MePB5gfavXO_CVv0ufa7oMEURYBJsEY "Checked In")
 
 
-![enter image description here](https://lh3.googleusercontent.com/ymHH7yLis1NCKCH-kYbmyIXQyM6c8owAN_tMCjlybCaJUfXfB9CNfnCgLUbEXkhxOwV_eMJd34A "Host email")
+![
+](https://lh3.googleusercontent.com/ymHH7yLis1NCKCH-kYbmyIXQyM6c8owAN_tMCjlybCaJUfXfB9CNfnCgLUbEXkhxOwV_eMJd34A "Host email")
 
 
 A Floating action button is provided on the bottom right corner, by which you can toggle between Home, Visitor Form and Checkout Form.
