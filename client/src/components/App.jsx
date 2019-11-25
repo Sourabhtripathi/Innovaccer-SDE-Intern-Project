@@ -4,7 +4,6 @@ import history from '../history';
 import LandingPage from './LandingPage';
 import AddVisitor from './AddVisitor';
 import Checkout from './Checkout';
-import '../stylesheets/App.css';
 
 class App extends Component {
 	render() {

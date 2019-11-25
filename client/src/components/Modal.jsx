@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../stylesheets/ModalComponent.css';
 import checkImage from '../images/check.jpg';
 import { Header, Image, Modal, Transition } from 'semantic-ui-react';
 

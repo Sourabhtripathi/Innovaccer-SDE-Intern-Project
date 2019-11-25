@@ -1,7 +1,47 @@
-.visitorForm {
-	background: red;
-	margin: "10vh auto";
-	width: "70%";
-	max-width: "672px";
-	padding: "5vh 2%";
+.container {
+	text-align: center;
+}
+
+.addHeading {
+	padding: 20px;
+	margin: 0 auto;
+	color: #ffffff;
+	font-size: 25px;
+	font-weight: 500;
+	font-family: 'Varela Round', sans-serif;
+}
+
+#visitor {
+	text-align: left;
+	margin: 10vh auto;
+	margin-top: 10px;
+	width: 70%;
+	max-width: 672px;
+	padding: 5vh 2%;
+}
+
+.visDet {
+	margin: 20px 0;
+}
+
+.hostDet {
+	margin: 20px 0;
+	margin-top: 40px;
+}
+
+.field {
+	width: 95%;
+	margin: 0 auto;
+}
+
+.submit-button {
+	margin: 20px auto;
+	margin-left: 40%;
+	margin-bottom: 0;
+}
+
+@media only screen and (max-width: 842px) {
+	#visitor {
+		width: 90%;
+	}
 }

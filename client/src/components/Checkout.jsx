@@ -67,16 +67,7 @@ class Checkout extends Component {
 				>
 					Checkout
 				</h3>
-				<div
-					className="ui card visitorForm"
-					style={{
-						margin: '10vh auto',
-						marginTop: '10px',
-						width: '70%',
-						maxWidth: '672px',
-						padding: '5vh 2%'
-					}}
-				>
+				<div className="ui card " id="checkout">
 					<form class="ui form" onSubmit={this.onFormSubmit}>
 						<h4 class="ui dividing header" style={{ margin: '20px auto', textAlign: 'center' }}>
 							Confirm Your Email

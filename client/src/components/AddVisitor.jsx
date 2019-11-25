@@ -87,36 +87,12 @@ class AddVisitor extends Component {
 	render() {
 		return (
 			<Fragment>
-				<div style={{ textAlign: 'center' }}>
-					<h3
-						style={{
-							padding: '20px',
-							margin: '0 auto',
-							color: '#ffffff',
-							fontSize: '25px',
-							fontWeight: '500',
-							fontFamily: "'Varela Round', sans-serif"
-						}}
-					>
-						Add Visitor
-					</h3>
-					<div
-						className="ui card visitorForm"
-						style={{
-							textAlign: 'left',
-							margin: '10vh auto',
-							marginTop: '10px',
-							width: '70%',
-							maxWidth: '672px',
-							padding: '5vh 2%'
-						}}
-					>
-						{/* <Link to="/">Back</Link> */}
+				<div className="container">
+					<h3 className="addHeading">Add Visitor</h3>
+					<div className="ui card" id="visitor">
 						<form class="ui form" onSubmit={this.handleFormSubmit}>
-							<h4 class="ui dividing header" style={{ margin: '20px 0' }}>
-								Visitor Details
-							</h4>
-							<div class="field" style={{ width: '95%', margin: '0 auto' }}>
+							<h4 class="ui dividing header visDet">Visitor Details</h4>
+							<div class="field row">
 								<div className="two fields">
 									<div className="field">
 										<label>Name</label>
@@ -148,7 +124,7 @@ class AddVisitor extends Component {
 									</div>
 								</div>
 							</div>
-							<div className="field" style={{ width: '95%', margin: '0 auto' }}>
+							<div className="field row">
 								<label>Email</label>
 								<input
 									type="email"
@@ -162,10 +138,8 @@ class AddVisitor extends Component {
 									<div className="ui pointing red basic label">Email Already Exists</div>
 								) : null}
 							</div>
-							<h4 class="ui dividing header" style={{ margin: '20px 0', marginTop: '40px' }}>
-								Host Details
-							</h4>
-							<div class="field" style={{ width: '95%', margin: '0 auto' }}>
+							<h4 class="ui dividing header hostDet">Host Details</h4>
+							<div class="field row">
 								<div className="two fields">
 									<div className="field">
 										<label>Name</label>
@@ -197,7 +171,7 @@ class AddVisitor extends Component {
 									</div>
 								</div>
 							</div>
-							<div className="field" style={{ width: '95%', margin: '0 auto' }}>
+							<div className="field row">
 								<label>Email</label>
 								<input
 									type="email"
@@ -208,11 +182,7 @@ class AddVisitor extends Component {
 									required
 								/>
 							</div>
-							<button
-								class="ui button red"
-								style={{ margin: '20px auto', marginLeft: '40%', marginBottom: 0 }}
-								type="submit"
-							>
+							<button class="ui button red submit-button" type="submit">
 								Submit
 							</button>
 						</form>
