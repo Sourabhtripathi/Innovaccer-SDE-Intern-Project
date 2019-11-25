@@ -85,29 +85,46 @@ As you enter the app you see a Landing Page greeting you on behalf of Innovaccer
 
 As You Enter, you would see a Visitor Form which asks for Visitor Details(Name, Phone, Email) and same info is recorded for Host as well.
 
+
 ![enter image description here](https://lh3.googleusercontent.com/_wNit4uAZmDh0dX6yF6DSEqgIv2OFbIgHyhshjhWYG2Nm3lUWY1jB8OMpAZrP8Q1Le3V6MMYdSg "Add Visitor")
+
 
 As the visitor checks in, he/she now cannot checkin again with the same email until he/she checks out.
 Once the visitor checks in, the host would receive an email and as sms informing him/her that there's a visitor waiting.
+
+
 
 ![
 ](https://lh3.googleusercontent.com/z0plK7oOMx5wqyYkiMZDYyd8KVgo71xI0kGsCW-A-YA4MePB5gfavXO_CVv0ufa7oMEURYBJsEY "Checked In")
 
 
-![enter image description here](https://lh3.googleusercontent.com/ymHH7yLis1NCKCH-kYbmyIXQyM6c8owAN_tMCjlybCaJUfXfB9CNfnCgLUbEXkhxOwV_eMJd34A "Host email")
 
-![enter image description here](https://lh3.googleusercontent.com/e9GmyV-jAxjuR8733G5L59Sjztq3I7Uw6sZGb7JhnkwmyTGSpV7iK38rN0Np9I6_dcm_2fMWE5M "SMS")
+![](https://lh3.googleusercontent.com/ymHH7yLis1NCKCH-kYbmyIXQyM6c8owAN_tMCjlybCaJUfXfB9CNfnCgLUbEXkhxOwV_eMJd34A "Host email")
+
+
+
+![](https://lh3.googleusercontent.com/e9GmyV-jAxjuR8733G5L59Sjztq3I7Uw6sZGb7JhnkwmyTGSpV7iK38rN0Np9I6_dcm_2fMWE5M "SMS")
+
+
 
 A Floating action button is provided on the bottom right corner, by which you can toggle between Home, Visitor Form and Checkout Form.
-![
-](https://lh3.googleusercontent.com/1gnEiEk5oVUR8ygMTGWaEUXDsoCP-RU44cpF-VlDo7Ga4-u33IPxMWd2XOUwpEScAj1kUASjTOE "FAB")
+
+
+![](https://lh3.googleusercontent.com/1gnEiEk5oVUR8ygMTGWaEUXDsoCP-RU44cpF-VlDo7Ga4-u33IPxMWd2XOUwpEScAj1kUASjTOE "FAB")
+
+
 
 Once the visitor opens the checkout form he/she will be required to enter his/her email to verify the checkout.
 
-![enter image description here](https://lh3.googleusercontent.com/O3pvF8INdIuFj43NlRYtIW2XPkpvFfSgGLZ8cfk_K7vpOvoJhVKSwhc_1eghpG0JoyO7IyWAknE "Checkout Form")
+![](https://lh3.googleusercontent.com/O3pvF8INdIuFj43NlRYtIW2XPkpvFfSgGLZ8cfk_K7vpOvoJhVKSwhc_1eghpG0JoyO7IyWAknE "Checkout Form")
+
+
 Once the visitor checks out he/she receives an email regarding the visit details :
-![
-](https://lh3.googleusercontent.com/ZywFizTtFlyLnrSj_z5b8O54vzKYJNikSKGPlP-4FUGsk39OtadfPzjIT6ymvK4yGhKx6ZQipkM "Visit Details")
+
+
+![](https://lh3.googleusercontent.com/ZywFizTtFlyLnrSj_z5b8O54vzKYJNikSKGPlP-4FUGsk39OtadfPzjIT6ymvK4yGhKx6ZQipkM "Visit Details")
+
+
 
 ## API Routes
 
