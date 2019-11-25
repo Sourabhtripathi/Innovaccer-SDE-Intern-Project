@@ -19,41 +19,35 @@ class Footer extends Component {
 					<Transition visible={this.state.showLabel} animation="scale" duration={500}>
 						<div class="fabDropdown" style={{ display: `${this.state.showLabel ? 'block' : 'none'}` }}>
 							<ul style={{ listStyle: 'none' }}>
-								<li style={{ padding: '5px 10px' }}>
-									<span
-										style={{ padding: '5px 10px', cursor: 'pointer' }}
-										onClick={() => {
-											this.handleOnClick('/');
-										}}
-									>
-										Home
-									</span>
+								<li
+									style={{ padding: '5px 10px' }}
+									onClick={() => {
+										this.handleOnClick('/');
+									}}
+								>
+									<span style={{ padding: '5px 10px', cursor: 'pointer' }}>Home</span>
 									<div class="item circular ui icon orange button">
 										<i class="icon home" />
 									</div>
 								</li>
-								<li style={{ padding: '5px 10px' }}>
-									<span
-										style={{ padding: '5px 10px', cursor: 'pointer' }}
-										onClick={() => {
-											this.handleOnClick('/add_visitor');
-										}}
-									>
-										Check-In
-									</span>
+								<li
+									style={{ padding: '5px 10px' }}
+									onClick={() => {
+										this.handleOnClick('/add_visitor');
+									}}
+								>
+									<span style={{ padding: '5px 10px', cursor: 'pointer' }}>Check-In</span>
 									<div class="circular ui icon orange button">
 										<i class="retweet icon" />
 									</div>
 								</li>
-								<li style={{ padding: '5px 10px' }}>
-									<span
-										style={{ padding: '5px 10px', cursor: 'pointer' }}
-										onClick={() => {
-											this.handleOnClick('/visitor_checkout');
-										}}
-									>
-										Checkout
-									</span>
+								<li
+									style={{ padding: '5px 10px' }}
+									onClick={() => {
+										this.handleOnClick('/visitor_checkout');
+									}}
+								>
+									<span style={{ padding: '5px 10px', cursor: 'pointer' }}>Checkout</span>
 									<div class="circular ui icon orange button">
 										<i class="checkered flag icon" />
 									</div>

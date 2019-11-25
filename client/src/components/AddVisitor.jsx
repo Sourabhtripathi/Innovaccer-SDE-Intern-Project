@@ -29,8 +29,11 @@ class AddVisitor extends Component {
 		});
 	}
 
-	resetState = () => {
+	resetState = async () => {
+		const response = await innovaccer.get('/get_visitors');
+
 		this.setState({
+			visitors: response.data,
 			visitorName: '',
 			visitorPhone: '',
 			visitorEmail: '',
@@ -53,11 +56,15 @@ class AddVisitor extends Component {
 			object[key] = value;
 		});
 
+		console.log(this.state.visitors);
+		console.log(object.visitorEmail);
+
 		const result = this.state.visitors.find((obj) => {
 			return obj.visitorEmail === object.visitorEmail;
 		});
+		console.log(result);
 
-		if (result != undefined) {
+		if (result !== undefined && result.checkout === null) {
 			console.log('email already exists');
 			this.setState({
 				emailError: true

@@ -36,7 +36,7 @@
 
 .submit-button {
 	margin: 20px auto;
-	margin-left: 40%;
+	margin-left: 40% !important;
 	margin-bottom: 0;
 }
 
