@@ -92,11 +92,10 @@ Once the visitor checks in, the host would receive an email and as sms informing
 
 
 ![](https://lh3.googleusercontent.com/ymHH7yLis1NCKCH-kYbmyIXQyM6c8owAN_tMCjlybCaJUfXfB9CNfnCgLUbEXkhxOwV_eMJd34A "Host email")
-
-
+<p>
 A Floating action button is provided on the bottom right corner, by which you can toggle between Home, Visitor Form and Checkout Form.
 ![](https://lh3.googleusercontent.com/zKR62KSWSIcJM_QHOTHsyl-JI6xaKoAlcIEO05UNuW0T6h9mCrPX2fCaakRyAMaqKUuklj2vgmM "Fab")
-
+</p>
 Once the visitor opens the checkout form he/she will be required to enter his/her email to verify the checkout.
 
 ![](https://lh3.googleusercontent.com/wJCwVW82-xVt71LYne2KYpRX9M6b5tMKKKaWdGgwYQMCmn3JOzEaxlaYq8VJ8Mda8ApEKKeD19w "Checkout Form") 
