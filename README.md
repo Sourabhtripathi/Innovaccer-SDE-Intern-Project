@@ -78,30 +78,38 @@ npm start
 Now you can use the app.
 
 ## Usage
-<p>
+
 As you enter the app you see a Landing Page greeting you on behalf of Innovaccer :
-![](https://lh3.googleusercontent.com/V-q-b2h-aTHJDlFMnp5Je5pHQadWY5IkdCbrE_fN7k4bhnz9w-Cfprhx0hAsNrHb27duz7fhykU "Landing Page")
-</p>
+![
+](https://lh3.googleusercontent.com/qZt9-tDMtcmuMft1SXw4dc1oeIIgOIyQsLH0xxlp2Psgct6PrCYqNkf4M9CVG2fJBsl7wkEfYoI "Landing")
+
 As You Enter, you would see a Visitor Form which asks for Visitor Details(Name, Phone, Email) and same info is recorded for Host as well.
-![](https://lh3.googleusercontent.com/m9FSseAXSCGKfKVqq9C3TLEovXffH7q8l6Je8KTCZ7zwyFRxoEfomizy2CzKWuhLR0q3VnX8pGk "Visitor Form")
+
+![enter image description here](https://lh3.googleusercontent.com/_wNit4uAZmDh0dX6yF6DSEqgIv2OFbIgHyhshjhWYG2Nm3lUWY1jB8OMpAZrP8Q1Le3V6MMYdSg "Add Visitor")
 
 As the visitor checks in, he/she now cannot checkin again with the same email until he/she checks out.
 Once the visitor checks in, the host would receive an email and as sms informing him/her that there's a visitor waiting.
 
-![](https://lh3.googleusercontent.com/z0plK7oOMx5wqyYkiMZDYyd8KVgo71xI0kGsCW-A-YA4MePB5gfavXO_CVv0ufa7oMEURYBJsEY "Checked In")
+![
+](https://lh3.googleusercontent.com/z0plK7oOMx5wqyYkiMZDYyd8KVgo71xI0kGsCW-A-YA4MePB5gfavXO_CVv0ufa7oMEURYBJsEY "Checked In")
 
 
-![](https://lh3.googleusercontent.com/ymHH7yLis1NCKCH-kYbmyIXQyM6c8owAN_tMCjlybCaJUfXfB9CNfnCgLUbEXkhxOwV_eMJd34A "Host email")
-<p>
+![enter image description here](https://lh3.googleusercontent.com/ymHH7yLis1NCKCH-kYbmyIXQyM6c8owAN_tMCjlybCaJUfXfB9CNfnCgLUbEXkhxOwV_eMJd34A "Host email")
+
+![enter image description here](https://lh3.googleusercontent.com/e9GmyV-jAxjuR8733G5L59Sjztq3I7Uw6sZGb7JhnkwmyTGSpV7iK38rN0Np9I6_dcm_2fMWE5M "SMS")
+
 A Floating action button is provided on the bottom right corner, by which you can toggle between Home, Visitor Form and Checkout Form.
-![](https://lh3.googleusercontent.com/zKR62KSWSIcJM_QHOTHsyl-JI6xaKoAlcIEO05UNuW0T6h9mCrPX2fCaakRyAMaqKUuklj2vgmM "Fab")
-</p>
+![
+](https://lh3.googleusercontent.com/zKR62KSWSIcJM_QHOTHsyl-JI6xaKoAlcIEO05UNuW0T6h9mCrPX2fCaakRyAMaqKUuklj2vgmM "Fab")
+
 Once the visitor opens the checkout form he/she will be required to enter his/her email to verify the checkout.
 
-![](https://lh3.googleusercontent.com/wJCwVW82-xVt71LYne2KYpRX9M6b5tMKKKaWdGgwYQMCmn3JOzEaxlaYq8VJ8Mda8ApEKKeD19w "Checkout Form") 
+![
+](https://lh3.googleusercontent.com/wJCwVW82-xVt71LYne2KYpRX9M6b5tMKKKaWdGgwYQMCmn3JOzEaxlaYq8VJ8Mda8ApEKKeD19w "Checkout Form") 
 
 Once the visitor checks out he/she receives an email regarding the visit details :
-![](https://lh3.googleusercontent.com/ZywFizTtFlyLnrSj_z5b8O54vzKYJNikSKGPlP-4FUGsk39OtadfPzjIT6ymvK4yGhKx6ZQipkM "Visit Details")
+![
+](https://lh3.googleusercontent.com/ZywFizTtFlyLnrSj_z5b8O54vzKYJNikSKGPlP-4FUGsk39OtadfPzjIT6ymvK4yGhKx6ZQipkM "Visit Details")
 
 ## API Routes
 
