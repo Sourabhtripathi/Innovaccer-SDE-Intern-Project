@@ -225,7 +225,7 @@ class AddVisitor extends Component {
 						/>
 					</div>
 				</div>
-				<Footer />
+				<Footer history={this.props.history} />
 			</Fragment>
 		);
 	}

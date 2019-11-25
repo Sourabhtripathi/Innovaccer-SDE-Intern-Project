@@ -107,7 +107,7 @@ class Checkout extends Component {
 						onModalClose={this.onModalClose}
 					/>
 				</div>
-				<Footer />
+				<Footer history={this.props.history} />
 				{/* <Link to="/add_visitor">Add Visitor</Link> */}
 			</div>
 		);

@@ -8,8 +8,8 @@ class Footer extends Component {
 		showLabel: false
 	};
 
-	handleOnClick = () => {
-		this.props.history.push('/');
+	handleOnClick = (path) => {
+		this.props.history.push(path);
 	};
 
 	render() {
@@ -23,7 +23,7 @@ class Footer extends Component {
 									<span
 										style={{ padding: '5px 10px', cursor: 'pointer' }}
 										onClick={() => {
-											this.handleOnClick();
+											this.handleOnClick('/');
 										}}
 									>
 										Home
@@ -36,7 +36,7 @@ class Footer extends Component {
 									<span
 										style={{ padding: '5px 10px', cursor: 'pointer' }}
 										onClick={() => {
-											this.handleOnClick();
+											this.handleOnClick('/add_visitor');
 										}}
 									>
 										Check-In
@@ -49,7 +49,7 @@ class Footer extends Component {
 									<span
 										style={{ padding: '5px 10px', cursor: 'pointer' }}
 										onClick={() => {
-											this.handleOnClick();
+											this.handleOnClick('/visitor_checkout');
 										}}
 									>
 										Checkout
