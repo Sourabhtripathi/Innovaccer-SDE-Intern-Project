@@ -40,7 +40,7 @@ Hosting :
 
 SMS Service :
 
- - Twilio
+ - Nexmo
  
 ## Installation
 Either download the repository zip or clone the repository by using the following command : 
@@ -67,7 +67,7 @@ npm start
 ```
 Your would get a message "Server Running" in your terminal
 
-To use the Mail and SMS Services you have to log in to MailJet and Twilio and get your credentials for the same.
+To use the Mail and SMS Services you have to log in to MailJet and Nexmo and get your credentials for the same.
 Now since your server is up and running, you can now move on to the client side.
 Open a new terminal and in the same directory as this repository, i.e, Innovaccer-SDE-Intern-Project
 
