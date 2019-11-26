@@ -4,10 +4,11 @@ const express = require('express'),
 	visitorRoutes = require('./routes/visitorRoutes'),
 	cors = require('cors'),
 	bodyParser = require('body-parser');
+require('dotenv').config();
 
 // MongoDB Configure
-const url = process.env.DATABASEURL || 'mongodb://localhost/innovaccer';
-const port = process.env.PORT || 3001;
+const url = process.env.DATABASEURL;
+const port = process.env.PORT;
 mongoose.connect(url, {
 	useNewUrlParser: true
 });

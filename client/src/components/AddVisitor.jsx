@@ -29,11 +29,16 @@ class AddVisitor extends Component {
 		});
 	}
 
-	resetState = async () => {
+	onModalClose = async () => {
 		const response = await innovaccer.get('/get_visitors');
-
 		this.setState({
-			visitors: response.data,
+			visitors: response.data
+		});
+		this.resetState();
+	};
+
+	resetState = () => {
+		this.setState({
 			visitorName: '',
 			visitorPhone: '',
 			visitorEmail: '',
@@ -72,9 +77,15 @@ class AddVisitor extends Component {
 		} else {
 			object = { ...object, checkin: Date.now(), addressVisited: 'Innovaccer Headquarters' };
 			await innovaccer.post('/visitor/checkin', JSON.stringify(object));
+			this.resetState();
 			this.setState({
 				modalOpen: true
 			});
+			window.onkeypress = (event) => {
+				if (event.keyCode == 13) {
+					this.onModalClose();
+				}
+			};
 		}
 	};
 
@@ -85,10 +96,6 @@ class AddVisitor extends Component {
 		this.setState({
 			[key]: value
 		});
-	};
-
-	onModalClose = () => {
-		this.resetState();
 	};
 
 	render() {

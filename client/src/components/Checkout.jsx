@@ -34,6 +34,11 @@ class Checkout extends Component {
 			this.setState({
 				modalOpen: true
 			});
+			window.onkeypress = (event) => {
+				if (event.keyCode == 13) {
+					this.onModalClose();
+				}
+			};
 		} else {
 			this.setState({
 				error: true,

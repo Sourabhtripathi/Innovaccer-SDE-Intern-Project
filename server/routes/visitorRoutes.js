@@ -1,9 +1,10 @@
 const express = require('express'),
 	app = express(),
 	Visitor = require('../models/visitor'),
-	mailjet = require('node-mailjet').connect(process.env.mailJetId, process.env.mailJetToken);
+	mail = require('node-mailjet'),
+	nexmo = require('../modules/nexmo');
 
-const client = require('twilio')(process.env.twilioSid, process.env.twilioAuthToken);
+const mailjet = mail.connect(process.env.mailJetId, process.env.mailJetToken);
 
 app.get('/', (req, res) => {
 	res.send('Server is running');
@@ -68,22 +69,10 @@ app.post('/visitor/checkin', (req, res) => {
 		.catch((err) => {
 			console.log(err.statusCode);
 		});
-
-	// Twilio SMS
-	client.messages
-		.create(
-			{
-				body: `You have a visitor\nHere are the Details :\nName : ${visitorName}\nPhone : ${visitorPhone}\nEmail : ${visitorEmail}\nTime : ${checkin}`,
-				from: '+12563339715',
-				to: `91${hostPhone}`
-			},
-			(err) => {
-				if (err) {
-					console.log(err);
-				}
-			}
-		)
-		.then((message) => console.log(message.sid));
+	nexmo(
+		`91${hostPhone}`,
+		`You have a visitor\nVisitor Details :\nName : ${visitorName}\nPhone : ${visitorPhone}\nEmail : ${visitorEmail}`
+	);
 });
 
 app.put('/visitor/checkout', (req, res) => {
