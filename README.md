@@ -8,6 +8,8 @@ Hosted React app : [https://innovaccer-sde-intern-client.herokuapp.com/](https:/
 
 Hosted Server : [https://innovaccer-sde-intern-server.herokuapp.com/](https://innovaccer-sde-intern-server.herokuapp.com/)
 
+Demo Video : https://drive.google.com/file/d/1x4kAN6_OWLsUHxbogkfmXq6RxXaGYxlT/view?usp=sharing
+
 ## Directory Structure
 
 ![enter image description here](https://lh3.googleusercontent.com/qRXwFMv1aMRz_6pQwGEuz1pMFgSvUs9N8q5xmc6YczASmlOs6xm1SlkkCgoXA2x32ni0INIXD64)
